@@ -18,7 +18,7 @@
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a class="navbar-brand" href="#">ブランド</a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
@@ -58,7 +58,25 @@
 
             {% block header %}{% endblock %}
 
-            {% block contents %}{% endblock %}
+            <!-- Contents -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+
+                        {% block contents %}{% endblock %}
+
+                    </div>
+                    <div class="col-lg-3">
+                        <dl>
+                            <dt>side bar</dt>
+                            <dd>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</dd>
+                            <dd>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</dd>
+                            <dd>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contents -->
 
             <footer>
                 <div class="container">
@@ -101,7 +119,7 @@
                     <p class="m-0 text-left text-white small">Copyright &copy; 2020 Yuto Sasada.</p>
                 </div>
             </footer>
-            <!-- End footer -->
+            <!-- End Footer -->
         </div>
         <!-- End #wrapper -->
 

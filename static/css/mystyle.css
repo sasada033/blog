@@ -2,6 +2,13 @@ body, #wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    word-wrap: break-word;
+    background-color: #f7f5f2;
+}
+
+nav {
+    background: linear-gradient(135deg, #030000 25%, transparent 25%, transparent 50%, #030000 50%, #030000 75%, transparent 75%, transparent);
+    background-size: 4px 4px;
 }
 
 footer {

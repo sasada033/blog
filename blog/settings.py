@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'post.apps.PostConfig',
-    'markdownx'
+    'markdownx',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -175,3 +176,8 @@ LOGGING = {
         },
     }
 }
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.toc',
+]
