@@ -11,14 +11,15 @@
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/androidstudio.min.css">
         <!-- My style -->
         <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a class="navbar-brand" href="#">ブランド</a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
@@ -58,7 +59,25 @@
 
             {% block header %}{% endblock %}
 
-            {% block contents %}{% endblock %}
+            <!-- Contents -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+
+                        {% block contents %}{% endblock %}
+
+                    </div>
+                    <div class="col-lg-3">
+                        <dl>
+                            <dt>side bar</dt>
+                            <dd>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</dd>
+                            <dd>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</dd>
+                            <dd>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- End Contents -->
 
             <footer>
                 <div class="container">
@@ -98,9 +117,10 @@
                             </ul>
                         </div>
                     </div>
+                    <p class="m-0 text-left text-white small">Copyright &copy; 2020 Yuto Sasada.</p>
                 </div>
             </footer>
-            <!-- End footer -->
+            <!-- End Footer -->
         </div>
         <!-- End #wrapper -->
 
@@ -109,5 +129,8 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
