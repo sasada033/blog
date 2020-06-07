@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load tags %}
 
 {% block title %}Index | Mysite{% endblock %}
 
@@ -13,13 +12,16 @@
 <div class="container">
     {% for post in post_list %}
     <br>
-    {{ post.title }}
+    <a href="{% url 'post:post_detail' post.pk %}">
+        {{ post.title }}
+    </a>
     {% for tag in post.tags.all %}
     {{ tag }}
     {% endfor %}
-    {{ post.content | markdown_to_html | safe }}
     {{ post.created_at }}
     <br>
+    {% empty %}
+    <p>検索結果なし</p>
     {% endfor %}
 </div>
 {% endblock %}

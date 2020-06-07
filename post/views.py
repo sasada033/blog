@@ -9,3 +9,8 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         queryset = Post.objects.order_by('-created_at')
         return queryset
+
+
+class PostDetailView(generic.DetailView):
+    model = Post
+    template_name = 'detail.html'
