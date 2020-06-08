@@ -1,13 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'post/base.html' %}
 
-{% load static %}
 {% load tags %}
 
 {% block title %}SASA*BLOG{% endblock %}
 
 
 {% block contents %}
-<div class="card text-left">
+<div class="card text-left mb-5">
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
@@ -36,6 +35,6 @@
 
 {% block aside %}
 
-{% include 'aside_primary.html' %}
+{% create_tag_list %}
 
 {% endblock %}

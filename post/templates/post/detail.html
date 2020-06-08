@@ -1,6 +1,5 @@
-{% extends 'base.html' %}
+{% extends 'post/base.html' %}
 
-{% load static %}
 {% load tags %}
 
 {% block title %}{{ post.title }} - SASA*BLOG{% endblock %}
@@ -26,8 +25,8 @@
 
 {% block aside %}
 
-{% include 'aside_primary.html' %}
-{% include 'aside_secondary.html' %}
+{% create_tag_list %}
+{% create_post_list %}
 
 {% endblock %}
 

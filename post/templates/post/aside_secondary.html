@@ -1,0 +1,23 @@
+<aside>
+    <h4 class="aside-head">News</h4>
+    <div class="card text-left">
+        {% for new in new_posts %}
+        <a href="{% url 'post:post_detail' new.pk %}" class="btn btn-outline-light border-bottom border-right" role="button">
+            <dl class="card-body mb-0">
+                <dd class="card-text text-black-50 text-left">{{ new.title }}</dd>
+            </dl>
+        </a>
+        {% endfor %}
+    </div>
+</aside>
+<aside>
+    <h4 class="aside-head">Trends</h4>
+    <div class="card text-left">
+        <div class="card-body border-bottom border-right">
+            <a href="#">
+                <p class="card-text text-black-50">テスト</p>
+            </a>
+        </div>
+    </div>
+</aside>
+
