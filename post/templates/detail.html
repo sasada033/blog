@@ -3,19 +3,31 @@
 {% load static %}
 {% load tags %}
 
-{% block title %}Detail | Mysite{% endblock %}
+{% block title %}{{ post.title }} - SASA*BLOG{% endblock %}
 
-{% block header %}
-
-{% endblock %}
 
 {% block contents %}
-<div class="container">
-    {{ post.title }}
-    {% for tag in post.tags.all %}
-    {{ tag }}
-    {% endfor %}
-    {{ post.created_at }}
-    {{ post.content | markdown_to_html }}
-</div>
+<main>
+    <div class="container">
+        <div class="mb-5">
+            <span>{{ post.updated_at }} 更新</span>
+            <h1 class="font-weight-bolder">{{ post.title }}</h1>
+            {% for tag in post.tags.all %}
+            <a href="#" class="p-2 rounded bg-secondary text-white">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        <div class="pb-5 border-bottom">
+            {{ post.content | markdown_to_html | urlize }}
+        </div>
+    </div>
+</main>
 {% endblock %}
+
+
+{% block aside %}
+
+{% include 'aside_primary.html' %}
+{% include 'aside_secondary.html' %}
+
+{% endblock %}
+
