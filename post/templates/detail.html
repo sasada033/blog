@@ -3,43 +3,31 @@
 {% load static %}
 {% load tags %}
 
-{% block title %}Detail | Mysite{% endblock %}
+{% block title %}{{ post.title }} - SASA*BLOG{% endblock %}
+
 
 {% block contents %}
-
 <main>
     <div class="container">
-        <h1>{{ post.title }}</h1>
-        {% for tag in post.tags.all %}
-        {{ tag }}
-        {% endfor %}
-        {{ post.created_at }}
-        <div><br></div>
-        {{ post.content | markdown_to_html | urlize }}
+        <div class="mb-5">
+            <span>{{ post.updated_at }} 更新</span>
+            <h1 class="font-weight-bolder">{{ post.title }}</h1>
+            {% for tag in post.tags.all %}
+            <a href="#" class="p-2 rounded bg-secondary text-white">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        <div class="pb-5 border-bottom">
+            {{ post.content | markdown_to_html | urlize }}
+        </div>
     </div>
 </main>
-
 {% endblock %}
+
 
 {% block aside %}
 
-<div class="card text-left">
-    <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">新着記事</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">人気記事</a>
-            </li>
-        </ul>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">カードのタイトル</h5>
-        <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。</p>
-        <a href="#" class="btn btn-primary">登録する</a>
-    </div>
-</div>
+{% include 'aside_primary.html' %}
+{% include 'aside_secondary.html' %}
 
 {% endblock %}
 
