@@ -1,4 +1,5 @@
 from django import template
+from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
 from django.db.models import Count
 from markdownx.utils import markdownify
@@ -13,6 +14,12 @@ register = template.Library()
 def markdown_to_html(text):
     """マークダウンをhtmlに変換する。"""
     return mark_safe(markdownify(text))
+
+
+@register.filter(is_safe=True)
+@stringfilter
+def split_timesince(value, delimiter=None):  # timesince を分割してシンプルに表示する
+    return value.split(delimiter)[0]
 
 
 @register.inclusion_tag('post/aside_primary.html')

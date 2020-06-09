@@ -9,12 +9,17 @@
 
         <title>{% block title %}{% endblock %}</title>
 
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- highlight.js -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/androidstudio.min.css">
+        <!-- Table of contents -->
+        <link rel="stylesheet" href="{% static 'css/table_of_contents.css' %}">
         <!-- My style -->
         <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="#">
     </head>
     <body>
         <!-- Navigation -->
@@ -49,11 +54,11 @@
         <!-- Contents -->
         <div id="contents" class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-9">
+                <div class="col-lg-9">
                     {% block contents %}{% endblock %}
                 </div>
-                <div class="col-lg-3 col-md-3">
-                        {% block aside %}{% endblock %}
+                <div class="col-lg-3">
+                    {% block aside %}{% endblock %}
                 </div>
             </div>
         </div>
@@ -91,13 +96,14 @@
         </footer>
         <!-- End Footer -->
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- JQuery -->
+        <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+        <!-- Bootstrap bundle -->
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         <!-- highlight.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        <!-- Table of contents -->
+        <script src="{% static 'js/table_of_contents.js' %}"></script>
     </body>
 </html>

@@ -7,18 +7,24 @@
 
 {% block contents %}
 <main>
-    <div class="container">
-        <div class="mb-5">
-            <span>{{ post.updated_at }} 更新</span>
-            <h1 class="font-weight-bolder">{{ post.title }}</h1>
-            {% for tag in post.tags.all %}
-            <a href="#" class="p-2 rounded bg-secondary text-white">{{ tag }}</a>
-            {% endfor %}
-        </div>
-        <div class="pb-5 border-bottom">
-            {{ post.content | markdown_to_html | urlize }}
-        </div>
+    <div class="mb-5">
+        <span>{{ post.updated_at }} 更新</span>
+        <h1 class="font-weight-bolder">{{ post.title }}</h1>
+        {% for tag in post.tags.all %}
+        <a href="#" class="p-2 rounded bg-secondary text-white">{{ tag }}</a>
+        {% endfor %}
     </div>
+    <div class="toc">
+        <dl class="toc-inner">
+            <dt class="toc-title">目次</dt>
+            <dd class="toc-block">
+                <!-- Loading contents -->
+            </dd>
+        </dl>
+    </div>
+    <article class="pb-5 border-bottom">
+        {{ post.content | markdown_to_html | urlize }}
+    </article>
 </main>
 {% endblock %}
 
