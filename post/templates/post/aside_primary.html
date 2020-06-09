@@ -1,0 +1,45 @@
+{% load static %}
+<!-- About Me -->
+<aside>
+    <h4 class="aside-head">About Me</h4>
+    <div class="aside-prof border">
+        <div class="prof-top"></div>
+        <div class="prof-icon">
+            <img src="{% static 'img/initial_icon_human.png' %}" alt="" width="90" height="90">
+        </div>
+        <dl class="prof-bottom mb-0">
+            <dt class="ml-2">ササダユウト</dt>
+            <dd class="text-black-50 py-2"><small>このブログを運営している管理人です。Webエンジニアとしてサーバーサイドからフロントエンドまで幅広く学習中です。</small></dd>
+            <dd>
+                <a href="#" class="btn btn-outline-info" role="button">もっと見る</a>
+            </dd>
+        </dl>
+    </div>
+</aside>
+<!-- End About Me -->
+<!-- Topics -->
+<aside>
+    <h4 class="aside-head">Topics</h4>
+    <ul class="aside-tags major-tags">
+        {% for tag in major_tags %}
+        <li class="btn btn-secondary btn-sm text-lg-left">
+            <a href="#" class="text-white">{{ tag }}</a>
+            <span>({{ tag.post_count }})</span>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>
+<!-- End Topics -->
+<!-- Others -->
+<aside>
+    <h4 class="aside-head">Others</h4>
+    <ul class="aside-tags">
+        {% for tag in minor_tags %}
+        <li class="btn btn-secondary btn-sm">
+            <a href="#" class="text-white">{{ tag }}</a>
+            <span>({{ tag.post_count }})</span>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>
+<!-- End Others -->
