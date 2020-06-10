@@ -10,7 +10,7 @@ class IndexView(generic.ListView):
     model = Post
     queryset = Post.objects.filter(is_public=True)
     ordering = '-created_at'
-    paginate_by = 10
+    paginate_by = 3
     template_name = 'post/index.html'
 
     def get_queryset(self):
@@ -21,7 +21,7 @@ class IndexView(generic.ListView):
 
         if tag:
             queryset = queryset.filter(tags=Tag.objects.get(name=tag))
-            messages.success(self.request, '「{}」の検索結果 - {}件'.format(tag, queryset.count()))
+            messages.success(self.request, '「{}」の記事 - {}件'.format(tag, queryset.count()))
             return queryset
 
         elif form.is_valid():

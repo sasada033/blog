@@ -51,7 +51,7 @@
 	padding:1em 1em 0.8em;
 	margin-bottom: 0;
 	color:#6C501B;
-	font-size:100%;
+	font-size:105%;
 	font-weight:bold;
 	background:#fffaf4;
 	border-bottom: 1px solid #dee2e6;
@@ -60,7 +60,7 @@
 #side .mokuji .mokujiInner {
 	border-top:none;
 	max-height: 450px;
-	overflow-y:scroll;
+	overflow: auto;
 }
 
 /* インデント */
@@ -94,9 +94,9 @@
 
 #side .mokuji li a {
 	display:block;
-	padding: 0.6rem;
+	padding: 0.7rem;
 	color: rgba(0,0,0,.6);
-	font-size:80%;
+	font-size:100%;
 	line-height:1.0;
 	text-decoration:none;
 }

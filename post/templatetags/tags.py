@@ -23,6 +23,13 @@ def split_timesince(value, delimiter=None):  # timesince を分割してシン�
     return value.split(delimiter)[0]
 
 
+@register.simple_tag
+def url_replace(request, field, value):
+    url_dict = request.GET.copy()
+    url_dict[field] = str(value)
+    return url_dict.urlencode()
+
+
 @register.inclusion_tag('post/aside_primary.html')
 def create_tag_list():
     tags = Tag.objects.all().annotate(post_count=Count('taggit_taggeditem_items')).order_by('-post_count')
