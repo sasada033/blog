@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load tags %}
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
@@ -42,10 +43,8 @@
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input type="search" class="form-control mr-sm-2" placeholder="検索..." aria-label="検索...">
-                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">検索</button>
-                    </form>
+                    <!-- Search form-->
+                    {% create_search_form request %}
                 </div>
             </div>
         </nav>
@@ -105,5 +104,7 @@
         <script>hljs.initHighlightingOnLoad();</script>
         <!-- Table of contents -->
         <script src="{% static 'js/table_of_contents.js' %}"></script>
+        <!-- My JavaScript -->
+        <script src="{% static 'js/myscript.js' %}"></script>
     </body>
 </html>
