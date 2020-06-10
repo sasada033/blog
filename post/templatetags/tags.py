@@ -5,6 +5,7 @@ from django.db.models import Count
 from markdownx.utils import markdownify
 from post.models import Post
 from taggit.models import Tag
+from post.forms import PostSearchForm
 
 
 register = template.Library()
@@ -39,7 +40,13 @@ def create_tag_list():
 def create_post_list():
     posts = Post.objects.filter(is_public=True).order_by('-created_at')[:5]
 
-    context = {
-        'new_posts': posts,
-    }
+    context = {'new_posts': posts}
+    return context
+
+
+@register.inclusion_tag('post/search_form.html')
+def create_search_form(request):
+    form = PostSearchForm(request.GET or None)
+
+    context = {'form': form}
     return context

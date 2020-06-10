@@ -17,16 +17,27 @@
             </li>
         </ul>
     </div>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="card-body border-bottom border-right">
+        <p class="card-text text-black-50 p-3">{{ message }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
     {% for post in post_list %}
     <div class="card-body border-bottom border-right">
         <p class="card-text"><small>{{ post.created_at }}</small></p>
         <a href="{% url 'post:post_detail' post.pk %}">
             <h5 class="card-title font-weight-bolder">{{ post.title }}</h5>
         </a>
-        <p class="card-text text-black-50">{{ post.content | truncatechars:100 }}</p>
+        <p class="card-text text-black-50 description">{{ post.content | truncatechars:100 }}</p>
         {% for tag in post.tags.all %}
-        <a href="#" class="btn btn-secondary btn-sm">{{ tag }}</a>
+        <a href="{% url 'post:index_tag' tag %}" class="btn btn-secondary btn-sm">{{ tag }}</a>
         {% endfor %}
+    </div>
+    {% empty %}
+    <div class="card-body border-bottom border-right">
+        <p class="card-text text-black-50 text-center p-3">検索結果がありませんでした。</p>
     </div>
     {% endfor %}
 </div>
