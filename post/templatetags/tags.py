@@ -45,7 +45,8 @@ def create_tag_list():
 
 @register.inclusion_tag('post/aside_secondary.html')
 def create_post_list():
-    posts = Post.objects.filter(is_public=True).order_by('-created_at')[:5]
+    posts = \
+        Post.objects.filter(is_public=True).order_by('-created_at').select_related('user',).prefetch_related('tags',)[:5]
 
     context = {'new_posts': posts}
     return context

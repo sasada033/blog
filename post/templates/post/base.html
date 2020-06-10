@@ -40,7 +40,7 @@
                             <a class="nav-link" href="#">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="{% url 'post:inquiry' %}">Contact</a>
                         </li>
                     </ul>
                     <!-- Search form-->
@@ -57,6 +57,24 @@
                     {% block contents %}{% endblock %}
                 </div>
                 <div class="col-lg-3">
+                    <!-- About Me -->
+                    <aside>
+                        <h4 class="aside-head">About Me</h4>
+                        <div class="aside-prof border">
+                            <div class="prof-top"></div>
+                            <div class="prof-icon">
+                                <img src="{% static 'img/initial_icon_human.png' %}" alt="" width="90" height="90">
+                            </div>
+                            <dl class="prof-bottom mb-0">
+                                <dt class="ml-2">ササダユウト</dt>
+                                <dd class="text-black-50 py-2"><small>このブログを運営している管理人です。Webエンジニアとしてサーバーサイドからフロントエンドまで幅広く学習中です。</small></dd>
+                                <dd>
+                                    <a href="#" class="btn btn-outline-info" role="button">もっと見る</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </aside>
+                    <!-- End About Me -->
                     {% block aside %}{% endblock %}
                 </div>
             </div>
@@ -82,7 +100,7 @@
                                 <a href="#">プロダクト</a>
                             </li>
                             <li>
-                                <a href="#">お問い合わせ</a>
+                                <a href="{% url 'post:inquiry' %}">お問い合わせ</a>
                             </li>
                             <li>
                                 <a href="#">プライバシーポリシー</a>

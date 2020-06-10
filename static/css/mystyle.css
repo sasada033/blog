@@ -19,7 +19,7 @@ body {
     flex: 1;
 }
 
-main {
+main, #inquiry {
     background-color: #FFF;
     line-height: 2rem;
     padding: 2rem 1rem;
