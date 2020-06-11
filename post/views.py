@@ -45,7 +45,7 @@ class PostDetailView(generic.DetailView):
 
 
 class InquiryView(generic.FormView):
-    template_name = "post/inquiry.html"
+    template_name = 'post/inquiry.html'
     form_class = InquiryForm
     success_url = reverse_lazy('post:inquiry')
 
@@ -54,3 +54,7 @@ class InquiryView(generic.FormView):
         messages.success(self.request, '管理人宛にメールを送信しました。お問い合わせありがとうございます。')
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
+
+
+class PrivacyPolicyView(generic.TemplateView):
+    template_name = 'post/privacy.html'
