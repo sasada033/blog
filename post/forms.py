@@ -19,17 +19,17 @@ class InquiryForm(forms.Form):
     title = forms.CharField(label='件名', max_length=100)
     message = forms.CharField(label='本文', widget=forms.Textarea)
 
-    def __int__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.fields['name'].widget.attrs['class'] = 'form-control col-9'
-        self.fields['name'].widget.attrs['placeholder'] = 'お名前をここに入力してください。'
+        self.fields['name'].widget.attrs['placeholder'] = '例) 山田太郎'
 
         self.fields['email'].widget.attrs['class'] = 'form-control col-11'
-        self.fields['email'].widget.attrs['placeholder'] = 'メールアドレスをここに入力してください。'
+        self.fields['email'].widget.attrs['placeholder'] = '例) yamadataro@example.com'
 
         self.fields['title'].widget.attrs['class'] = 'form-control col-11'
-        self.fields['title'].widget.attrs['placeholder'] = '件名をここに入力してください。'
+        self.fields['title'].widget.attrs['placeholder'] = '例) ××についてのご連絡'
 
         self.fields['message'].widget.attrs['class'] = 'form-control col-12'
         self.fields['message'].widget.attrs['placeholder'] = '本文をここに入力してください。'
