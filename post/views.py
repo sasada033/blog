@@ -58,3 +58,7 @@ class InquiryView(generic.FormView):
 
 class PrivacyPolicyView(generic.TemplateView):
     template_name = 'post/privacy.html'
+
+
+class ProfileView(generic.TemplateView):
+    template_name = 'post/profile.html'

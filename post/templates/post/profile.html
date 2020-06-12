@@ -1,0 +1,46 @@
+{% extends 'post/base.html' %}
+
+{% load tags %}
+
+{% block title %}プロフィール - SASA*BLOG{% endblock %}
+
+
+{% block contents %}
+<div id="profile">
+    <div class="border-bottom">
+        <div class="mb-5">
+            <h2>自己紹介</h2>
+            <h3>ササダ<small>と申します。</small></h3>
+            <p>文系出身、24歳独身、名古屋在住の男性です。Webエンジニアを目指して、現在、就職活動中の身です。</p>
+            <p class="mb-4">休憩時間に、自分で作った料理を食べながら好きなノベルゲームのオートモード鑑賞をするのが趣味です。</p>
+            <h3>アカウント</h3>
+            <div class="sns-icons">
+                <ul class="sns-list">
+                    <li>
+                        <a href="https://github.com/sasada033"><i class="fab fa-github fa-2x text-dark"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End self introduction -->
+        <div>
+            <h2>プロジェクト</h2>
+            <p class="mb-5">現在、進行中のプロジェクトです。</p>
+            <h3>カミヒロバ（仮称）</h3>
+            <p>学生時代にカードゲームショップで営業アルバイトをしていた経験を生かし、カードゲームユーザーにフレンドリーな機能を備えたWebアプリケーションを作りたいと考え、始動したプロジェクトです。</p>
+            <p>ソースコードは<a href="#">こちら</a></p>
+            <p class="text-right"><small>2020年6月11日 更新</small></p>
+        </div>
+        <!-- End project-->
+    </div>
+</div>
+<!-- /#profile -->
+{% endblock %}
+
+
+{% block aside %}
+
+{% create_tag_list %}
+
+{% endblock %}
+

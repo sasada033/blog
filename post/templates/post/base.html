@@ -12,7 +12,8 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- fontAwesome -->
+        <script src="https://kit.fontawesome.com/57a835be4a.js" crossorigin="anonymous"></script>
         <!-- highlight.js -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/androidstudio.min.css">
         <!-- Table of contents -->
@@ -34,10 +35,7 @@
                 <div class="collapse navbar-collapse" id="Navber">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
+                            <a class="nav-link" href="{% url 'post:profile' %}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'post:inquiry' %}">Contact</a>
@@ -66,10 +64,10 @@
                                 <img src="{% static 'img/initial_icon_human.png' %}" alt="" width="90" height="90">
                             </div>
                             <dl class="prof-bottom mb-0">
-                                <dt class="ml-2">ササダユウト</dt>
+                                <dt class="ml-2">ササダ</dt>
                                 <dd class="text-black-50 py-2"><small>このブログを運営している管理人です。Webエンジニアとしてサーバーサイドからフロントエンドまで幅広く学習中です。</small></dd>
                                 <dd>
-                                    <a href="#" class="btn btn-outline-info" role="button">もっと見る</a>
+                                    <a href="{% url 'post:profile' %}" class="btn btn-outline-info" role="button">もっと見る</a>
                                 </dd>
                             </dl>
                         </div>
@@ -85,19 +83,23 @@
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-4">
-                        <span class="logo">SASA*BLOG</span>
+                        <div class="logo">SASA*BLOG</div>
+                        <div class="sns-icons">
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="https://github.com/sasada033"><i class="fab fa-github fa-2x"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-10 col-md-4">
-                        <ul class="menu">
+                        <ul class="menu mb-5">
                             <span>Menu</span>
                             <li>
                                 <a href="{% url 'post:index' %}">トップ</a>
                             </li>
                             <li>
-                                <a href="#">自己紹介</a>
-                            </li>
-                            <li>
-                                <a href="#">プロダクト</a>
+                                <a href="{% url 'post:profile' %}">プロフィール</a>
                             </li>
                             <li>
                                 <a href="{% url 'post:inquiry' %}">お問い合わせ</a>
@@ -108,7 +110,7 @@
                         </ul>
                     </div>
                 </div>
-                <p class="m-0 text-left text-white-50 small">Copyright &copy; 2020 Yuto Sasada.</p>
+                <p class="m-0 text-left text-white-50 small">Copyright &copy; 2020 SASA*BLOG</p>
             </div>
         </footer>
         <!-- End Footer -->
