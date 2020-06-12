@@ -19,10 +19,10 @@ body {
     flex: 1;
 }
 
-main, #inquiry, #privacy {
+main, #inquiry, #privacy, #profile {
     background-color: #FFF;
     line-height: 2rem;
-    padding: 2rem 1.5rem 5rem 1.0rem;
+    padding: 2rem 1.5rem 5rem 1.5rem;
 }
 
 h1 {
@@ -51,7 +51,7 @@ article h4, #privacy h4 {
     font-weight: bolder;
 }
 
-#inquiry h2, #privacy h2 {
+#inquiry h2, #privacy h2, #profile h2 {
     margin-bottom: 3rem;
     padding: 0.6rem 1rem;/*文字の上下 左右の余白*/
     color: #494949;/*文字色*/
@@ -63,6 +63,32 @@ article h4, #privacy h4 {
 #privacy p {
     text-indent: 1em;
     margin-bottom: 2.2em;
+}
+
+#profile h3 {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    color:#153c6e;
+}
+
+#profile h3::before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    content: "\f121";
+    font-weight: 900;
+    background: #c9e2ff;
+    color: #153c6e;
+    font-size: 15px;
+    border-radius: 50%;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .card-body {
@@ -145,6 +171,26 @@ footer {
     background-color: #33383c;
     padding: 20px 0px;
     margin-top: 20px;
+}
+
+.sns-icons {
+    margin: 1rem 0;
+    padding: 0.3rem;
+}
+
+.sns-list {
+    margin: 1rem 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.sns-list li {
+    margin: 0 1rem;
+}
+
+.fa-github, .fa-twitter {
+    color: rgba(255,255,255,.5);
 }
 
 .menu span {

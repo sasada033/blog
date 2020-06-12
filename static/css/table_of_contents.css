@@ -1,16 +1,4 @@
-.toc {
-    margin: 4rem 0;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.toc-inner {
-    position: relative;
-    margin: 0 10rem;
-    padding: 1.5rem 0.5rem 0 0.5rem;
-    border: 3px solid #ddd;
-}
-
+/* メインの目次 */
 .toc-title {
     position: absolute;
     top: -1.5rem;
@@ -29,6 +17,35 @@
 
 .toc-block ol li a:hover{
     color: #28a745;
+}
+
+@media screen and (max-width:767px){
+    .toc {
+        margin: 3rem 0;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .toc-inner {
+        position: relative;
+        padding-top: 1.5rem;
+        border: 3px solid #ddd;
+    }
+}
+
+@media screen and (min-width:768px){
+    .toc {
+        margin: 4rem 0;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .toc-inner {
+        position: relative;
+        margin: 0 10rem;
+        padding: 1.5rem 0.5rem 0 0.5rem;
+        border: 3px solid #ddd;
+    }
 }
 
 /* サイドバー */
