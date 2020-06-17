@@ -38,6 +38,8 @@ INSTALLED_APPS = [
 
     'markdownx',
     'taggit',
+
+    'django_ses',
 ]
 
 MIDDLEWARE = [
