@@ -79,3 +79,5 @@ CSRF_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
 # security.W021
 SECURE_HSTS_PRELOAD = True
+# security.W022
+SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
