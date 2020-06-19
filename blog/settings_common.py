@@ -146,3 +146,5 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',
     'markdown.extensions.toc',
 ]
+
+DEFAULT_FROM_EMAIL = 'noreply@sasasite.net'

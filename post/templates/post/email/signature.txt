@@ -1,0 +1,11 @@
+
+{% block body %}{% endblock %}
+----------------------------------------
+SASA*SITE
+
+管理人: ササダ <Sasada>
+
+Email: sasada＠email.sasasite.net
+
+URL: https://sasasite.net/
+----------------------------------------
