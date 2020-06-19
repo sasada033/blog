@@ -14,6 +14,7 @@ AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
 EMAIL_BACKEND = 'django_ses.SESBackend'
 SERVER_EMAIL = 'SASA*SITE <noreply@sasasite.net>'
+DEFAULT_FROM_EMAIL = 'SASA*SITE <noreply@sasasite.net>'
 
 # ロギング設定
 LOGGING = {
