@@ -13,6 +13,8 @@ MEDIA_ROOT = '/usr/share/ngnix/html/media'
 AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
 EMAIL_BACKEND = 'django_ses.SESBackend'
+SERVER_EMAIL = 'SASA*SITE <noreply@sasasite.net>'
+DEFAULT_FROM_EMAIL = 'SASA*SITE <noreply@sasasite.net>'
 
 # ロギング設定
 LOGGING = {
@@ -77,3 +79,5 @@ CSRF_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
 # security.W021
 SECURE_HSTS_PRELOAD = True
+# security.W022
+SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
