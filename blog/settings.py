@@ -16,6 +16,20 @@ EMAIL_BACKEND = 'django_ses.SESBackend'
 SERVER_EMAIL = 'SASA*SITE <noreply@sasasite.net>'
 DEFAULT_FROM_EMAIL = 'SASA*SITE <noreply@sasasite.net>'
 
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blog',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
+    }
+}
+
 # ロギング設定
 LOGGING = {
     'version': 1,  # 1固定
