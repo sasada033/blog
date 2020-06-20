@@ -6,6 +6,25 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# メール設定
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blog',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
 # ロギング設定
 LOGGING = {
     'version': 1,  # 1固定
@@ -47,6 +66,4 @@ LOGGING = {
     }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
