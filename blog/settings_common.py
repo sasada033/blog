@@ -10,18 +10,43 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+
 import os
+import environ
 from django.contrib.messages import constants as messages
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
+# django-environ reads .env file
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u8!qg83k+we(hc(vki+*d33ssp%_s(q17=^n5kjad%^+gsu_-4'
+
+SECRET_KEY = env('SECRET_KEY')
+
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': env.db(),
+}
+
+
+GOOGLE_ANALYTICS_TRACKING_ID = env('GOOGLE_ANALYTICS_TRACKING_ID')
 
 
 # Application definition
@@ -42,6 +67,7 @@ INSTALLED_APPS = [
     'django_ses',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,7 +78,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'blog.urls'
+
 
 TEMPLATES = [
     {
@@ -65,14 +93,18 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.context_processors.google_analytics',
             ],
         },
     },
 ]
 
+
 WSGI_APPLICATION = 'blog.wsgi.application'
 
+
 AUTH_USER_MODEL = 'post.CustomUser'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -118,13 +150,18 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 
-# Bootstrapのメッセージ装飾設定
+
+# Bootstrap css decorating messages
+
 MESSAGE_TAGS = {
     messages.ERROR: 'alert alert-danger',
     messages.WARNING: 'alert alert-warning',
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }
+
+
+# MarkdownX settings
 
 MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',

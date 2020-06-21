@@ -22,6 +22,10 @@
         <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
         <!-- favicon -->
         <link rel="icon" type="image/png" href="#">
+
+        {% if GOOGLE_ANALYTICS_TRACKING_ID %}
+            {% include 'post/google_analytics.html' %}
+        {% endif %}
     </head>
     <body>
         <!-- Navigation -->

@@ -25,6 +25,15 @@ main, #inquiry, #privacy, #profile {
     padding: 2rem 1.5rem 5rem 1.5rem;
 }
 
+main {
+    margin-bottom: 22rem;
+}
+
+#inquiry, #privacy, #profile {
+    margin-bottom: 10rem;
+}
+
+
 h1 {
     padding: 0.5em 0;/*上下の余白*/
     margin-bottom: 0.5em;
@@ -32,7 +41,7 @@ h1 {
 }
 
 article h2 {
-    margin-bottom: 0.7em;
+    margin: 2em 0 0.7em 0;
     padding: 0.4em;/*文字周りの余白*/
     color: #494949;/*文字色*/
     background: #fffaf4;/*背景色*/
@@ -40,7 +49,7 @@ article h2 {
 }
 
 article h3, #privacy h3 {
-    margin-bottom: 0.6em;
+    margin: 1.2em 0 0.6em 0;
     padding: 0.1em 0.3em;/*上下 左右の余白*/
     color: #494949;/*文字色*/
     background: transparent;/*背景透明に*/
