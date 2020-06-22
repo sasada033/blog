@@ -46,6 +46,13 @@ DATABASES = {
 }
 
 
+# Email settings
+
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+ADMIN_EMAIL_ADDRESS = env('ADMIN_EMAIL_ADDRESS')
+
+
 # Application definition
 
 INSTALLED_APPS = [

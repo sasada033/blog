@@ -23,8 +23,6 @@ EMAIL_BACKEND = 'django_ses.SESBackend'
 
 SERVER_EMAIL = env('SERVER_EMAIL')
 
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
-
 
 # Log settings
 
