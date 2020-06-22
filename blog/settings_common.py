@@ -46,9 +46,6 @@ DATABASES = {
 }
 
 
-GOOGLE_ANALYTICS_TRACKING_ID = env('GOOGLE_ANALYTICS_TRACKING_ID')
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -101,6 +98,9 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'blog.wsgi.application'
+
+
+ADMIN_SITE_URL = env('ADMIN_SITE_URL')
 
 
 AUTH_USER_MODEL = 'post.CustomUser'
@@ -167,3 +167,8 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',
     'markdown.extensions.toc',
 ]
+
+
+# Google Analytics settings
+
+GOOGLE_ANALYTICS_TRACKING_ID = env('GOOGLE_ANALYTICS_TRACKING_ID')
