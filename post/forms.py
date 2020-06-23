@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 
@@ -40,22 +41,25 @@ class InquiryForm(forms.Form):
         email = self.cleaned_data['email']
         title = self.cleaned_data['title']
         message = self.cleaned_data['message']
+        admin_email = settings.ADMIN_EMAIL_ADDRESS
 
         context = {
             'name': name,
             'email': email,
             'title': title,
             'message': message,
+            'admin_email': admin_email
         }
 
         subject = '[SASA*SITE] お問い合わせ受付完了のお知らせ'
         body = render_to_string('post/email/noreply.txt', context, request)
-        form_email = 'SASA*SITE <noreply@sasasite.net>'
+        form_email = settings.DEFAULT_FROM_EMAIL
+
         to_list = [
             email
         ]
         bcc_list = [
-            'sasada@email.sasasite.net'
+            admin_email
         ]
 
         info_mail = EmailMessage(subject=subject, body=body, from_email=form_email, to=to_list, bcc=bcc_list)

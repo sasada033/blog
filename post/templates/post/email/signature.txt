@@ -6,7 +6,7 @@ SASA*SITE
 
 管理人: ササダ <Sasada>
 
-Email: sasada＠email.sasasite.net
+Email: {{ admin_email }}
 
 URL: https://sasasite.net/
 

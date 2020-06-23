@@ -21,7 +21,13 @@
         <!-- My style -->
         <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
         <!-- favicon -->
-        <link rel="icon" type="image/png" href="#">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+        <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" href="{% static 'img/android-chrome-256x256.png' %}">
+
+        {% if GOOGLE_ANALYTICS_TRACKING_ID %}
+            {% include 'post/google_analytics.html' %}
+        {% endif %}
     </head>
     <body>
         <!-- Navigation -->

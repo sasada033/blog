@@ -10,13 +10,16 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#">新着順</a>
+                <a class="nav-link {% if not is_trend %}active{% endif %}" href="{% url 'post:index' %}">新着順</a>
             </li>
+            {% if is_top %}
             <li class="nav-item">
-                <a class="nav-link" href="#">人気順</a>
+                <a class="nav-link {% if is_trend %}active{% endif %}" href="{% url 'post:index_trend' %}">人気順</a>
             </li>
+            {% endif %}
         </ul>
     </div>
+
     {% if messages %}
     {% for message in messages %}
     <div class="card-body border-bottom border-right">
@@ -24,6 +27,7 @@
     </div>
     {% endfor %}
     {% endif %}
+
     {% for post in post_list %}
     <div class="card-body border-bottom border-right">
         <p class="card-text"><small>{{ post.created_at }}</small></p>
@@ -76,6 +80,7 @@
         {% endif %}
     </ul>
 </div>
+<!-- End Pagination -->
 {% endif %}
 
 {% endblock %}
