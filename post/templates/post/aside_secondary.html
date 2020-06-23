@@ -19,21 +19,15 @@
 <aside>
     <h4 class="aside-head">Trends</h4>
     <div class="card text-left">
-        <div class="card-body border-bottom border-right">
-            <a href="#">
-                <p class="card-text text-black-50">テスト</p>
-            </a>
-        </div>
+        {% for trend in trend_posts %}
+        <a href="{% url 'post:post_detail' trend.pk %}" class="btn btn-outline-light border-bottom border-right" role="button">
+            <dl class="card-body mb-0">
+                <dd class="card-text text-black-50 text-left">
+                    <strong class="mr-2">{{ forloop.counter }}.</strong>{{ trend.title }}<small class="mx-2">{{ trend.page_view }} views</small>
+                </dd>
+            </dl>
+        </a>
+        {% endfor %}
     </div>
 </aside>
 <!-- End Trends -->
-<!-- Table of contents -->
-<aside id="side">
-    <h4 class="aside-head">Contents</h4>
-    <div class="mokuji">
-        <!-- Loading contents -->
-    </div>
-    <!-- /.mokuji -->
-</aside>
-<!-- End Table of contents -->
-

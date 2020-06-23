@@ -1,0 +1,21 @@
+{% extends 'post/base.html' %}
+
+{% load tags %}
+
+{% block title %}404 error - SASA*SITE{% endblock %}
+
+
+{% block contents %}
+<div class="card-body border-bottom border-right alert alert-info">
+    <p class="card-text text-black-50 p-3">※404エラー※ お探しのページが見つかりませんでした。</p>
+</div>
+{% endblock %}
+
+
+{% block aside %}
+
+{% create_tag_list %}
+{% create_post_list %}
+
+{% endblock %}
+
