@@ -9,6 +9,12 @@ env:
       - DJANGO_VERSION=3.0.7
       - DJANGO_SETTINGS_MODULE='blog.settings_dev'
 
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+
 # command to install dependencies
 install:
   - pip install -r requirements.txt
