@@ -2,12 +2,12 @@ language: python
 
 python:
   - "3.6"      # current default Python on Travis CI
-  - "3.7"
   - "3.8"
 
 env:
-  - DJANGO_VERSION=2.2.6
-  - DJANGO_VERSION=3.0.2
+    global:
+      - DJANGO_VERSION=3.0.7
+      - DJANGO_SETTINGS_MODULE='blog.settings_dev'
 
 # command to install dependencies
 install:
@@ -15,4 +15,9 @@ install:
 
 # command to run tests
 script:
-  - python -Wall manage.py test --settings blog.settings_dev
+  - python -Wall manage.py test
+
+branches:
+  only:
+    - master
+    - develop
