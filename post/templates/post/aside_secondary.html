@@ -23,7 +23,7 @@
         <a href="{% url 'post:post_detail' trend.pk %}" class="btn btn-outline-light border-bottom border-right" role="button">
             <dl class="card-body mb-0">
                 <dd class="card-text text-black-50 text-left">
-                    <strong class="mr-2">{{ forloop.counter }}.</strong>{{ trend.title }}<small class="mx-2">{{ trend.page_view }} views</small>
+                    <strong class="mr-2">{{ forloop.counter }}.</strong>{{ trend.title }}<br><small>{{ trend.page_view }} views</small>
                 </dd>
             </dl>
         </a>

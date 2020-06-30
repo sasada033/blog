@@ -30,7 +30,9 @@
 
     {% for post in post_list %}
     <div class="card-body border-bottom border-right">
-        <p class="card-text"><small>{{ post.created_at }}</small></p>
+        <p class="card-text">
+            <small>{{ post.created_at }}</small><small class="ml-3 text-black-50"><i class="far fa-eye mr-1"></i>{{ post.page_view }}views</small>
+        </p>
         <a href="{% url 'post:post_detail' post.pk %}">
             <h5 class="card-title font-weight-bolder">{{ post.title }}</h5>
         </a>

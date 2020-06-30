@@ -60,6 +60,13 @@ article h4, #privacy h4 {
     font-weight: bolder;
 }
 
+article img {
+    border: 1px solid #dedede;
+    margin: 2rem 0;
+    max-width: 100%;
+    height: auto;
+}
+
 #inquiry h2, #privacy h2, #profile h2 {
     margin-bottom: 3rem;
     padding: 0.6rem 1rem;/*文字の上下 左右の余白*/
@@ -76,7 +83,7 @@ article h4, #privacy h4 {
 
 #profile h3 {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin: 3rem 0 1.5rem 0;
     padding-left: 2.5rem;
     color:#153c6e;
 }
@@ -232,5 +239,8 @@ footer {
 @media screen and (max-width: 767px) {
     #paging ul .page-buns {
         display: none;
+    }
+    main {
+        margin-bottom: 10rem;
     }
 }
