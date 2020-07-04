@@ -175,6 +175,11 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.toc',
 ]
 
+MARKDOWNX_IMAGE_MAX_SIZE = {
+    'size': (1920, 1080),
+    'quality': 90,
+    'crop': True,
+}
 
 # Google Analytics settings
 
