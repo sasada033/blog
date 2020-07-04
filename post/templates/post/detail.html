@@ -2,6 +2,17 @@
 
 {% load tags %}
 
+
+{% block description %}
+<meta name="description" content="{{ post.content | markdown_to_html | striptags | truncatechars:150 }}">
+{% endblock %}
+
+
+{% block keyword %}
+<meta name="keyword" content="{% for tag in post.tags.all %}{{ tag }},{% endfor %}">
+{% endblock %}
+
+
 {% block title %}{{ post.title }} - SASA*SITE{% endblock %}
 
 
