@@ -181,7 +181,6 @@ MARKDOWNX_IMAGE_MAX_SIZE = {
     'crop': True,
 }
 
-
 # Google Analytics settings
 
 GOOGLE_ANALYTICS_TRACKING_ID = env('GOOGLE_ANALYTICS_TRACKING_ID')
