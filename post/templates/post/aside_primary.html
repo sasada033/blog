@@ -5,7 +5,7 @@
         {% for tag in major_tags %}
         <li class="btn btn-secondary btn-sm p-0">
             <a href="{% url 'post:index_tag' tag %}" class="text-white text-lg-left">
-                <p class="mb-0 p-1 pl-3">{{ tag }}<span>({{ tag.post_count }})</span></p>
+                <p class="mb-0 p-1 pl-3">{{ tag }}<span class="ml-1">({{ tag.post_count }})</span></p>
             </a>
         </li>
         {% endfor %}
@@ -19,7 +19,7 @@
         {% for tag in minor_tags %}
         <li class="btn btn-secondary btn-sm p-0">
             <a href="{% url 'post:index_tag' tag %}" class="text-white text-lg-left">
-                <p class="mb-0 px-2 py-1">{{ tag }}<span>({{ tag.post_count }})</span></p>
+                <p class="mb-0 px-2 py-1">{{ tag }}<span class="ml-1">({{ tag.post_count }})</span></p>
             </a>
         </li>
         {% endfor %}

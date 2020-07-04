@@ -5,8 +5,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
+
+        {% block description %}{% endblock %}
+        {% block keyword %}{% endblock %}
 
         <title>{% block title %}{% endblock %}</title>
 
@@ -130,7 +131,5 @@
         <script>hljs.initHighlightingOnLoad();</script>
         <!-- Table of contents -->
         <script src="{% static 'js/table_of_contents.js' %}"></script>
-        <!-- My JavaScript -->
-        <script src="{% static 'js/myscript.js' %}"></script>
     </body>
 </html>

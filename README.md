@@ -42,7 +42,3 @@ You can see this website on https://sasaseite.net.
 - CI tool
 
     Travis CI
-    
-- Analytics tool
-
-    Google Analytics API
