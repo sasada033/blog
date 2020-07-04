@@ -1,0 +1,33 @@
+{% load tags %}
+<!-- News -->
+<aside>
+    <h4 class="aside-head">News</h4>
+    <div class="card text-left">
+        {% for new in new_posts %}
+        <a href="{% url 'post:post_detail' new.pk %}" class="btn btn-outline-light border-bottom border-right" role="button">
+            <dl class="card-body mb-0">
+                <dd class="card-text text-black-50 text-left">
+                    {{ new.title }}<small class="mx-2">- {{ new.created_at | timesince | split_timesince:',' }}前</small>
+                </dd>
+            </dl>
+        </a>
+        {% endfor %}
+    </div>
+</aside>
+<!-- End News -->
+<!-- Trends -->
+<aside>
+    <h4 class="aside-head">Trends</h4>
+    <div class="card text-left">
+        {% for trend in trend_posts %}
+        <a href="{% url 'post:post_detail' trend.pk %}" class="btn btn-outline-light border-bottom border-right" role="button">
+            <dl class="card-body mb-0">
+                <dd class="card-text text-black-50 text-left">
+                    <strong class="mr-2">{{ forloop.counter }}.</strong>{{ trend.title }}<br><small>{{ trend.page_view }} views</small>
+                </dd>
+            </dl>
+        </a>
+        {% endfor %}
+    </div>
+</aside>
+<!-- End Trends -->

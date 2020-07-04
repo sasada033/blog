@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+{% load tags %}
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block description %}{% endblock %}
+        {% block keyword %}{% endblock %}
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <!-- fontAwesome -->
+        <script src="https://kit.fontawesome.com/57a835be4a.js" crossorigin="anonymous"></script>
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/androidstudio.min.css">
+        <!-- Table of contents -->
+        <link rel="stylesheet" href="{% static 'css/table_of_contents.css' %}">
+        <!-- My style -->
+        <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+        <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" href="{% static 'img/android-chrome-256x256.png' %}">
+
+        {% if GOOGLE_ANALYTICS_TRACKING_ID %}
+            {% include 'post/google_analytics.html' %}
+        {% endif %}
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand mr-5" href="{% url 'post:index' %}">SASA*SITE</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber"
+                        aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Navber">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'post:profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'post:inquiry' %}">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Search form-->
+                    {% create_search_form request %}
+                </div>
+            </div>
+        </nav>
+        <!-- End Navigation -->
+
+        <!-- Contents -->
+        <div id="contents" class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    {% block contents %}{% endblock %}
+                </div>
+                <div class="col-lg-3">
+                    <!-- About Me -->
+                    <aside>
+                        <h4 class="aside-head">About Me</h4>
+                        <div class="aside-prof border">
+                            <div class="prof-top"></div>
+                            <div class="prof-icon">
+                                <img src="{% static 'img/initial_icon_human.png' %}" alt="" width="90" height="90">
+                            </div>
+                            <dl class="prof-bottom mb-0">
+                                <dt class="ml-2">ササダ</dt>
+                                <dd class="text-black-50 py-2"><small>このサイトを運営している管理人です。Webエンジニアとしてサーバーサイドからフロントエンドまで幅広く学習中です。</small></dd>
+                                <dd>
+                                    <a href="{% url 'post:profile' %}" class="btn btn-outline-info" role="button">もっと見る</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </aside>
+                    <!-- End About Me -->
+                    {% block aside %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <!-- End Contents -->
+
+        <footer>
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-4">
+                        <div class="logo">SASA*SITE</div>
+                        <div class="sns-icons">
+                            <ul class="sns-list">
+                                <li>
+                                    <a href="https://github.com/sasada033"><i class="fab fa-github fa-2x"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-10 col-md-4">
+                        <ul class="menu mb-5">
+                            <span>Menu</span>
+                            <li>
+                                <a href="{% url 'post:index' %}">トップ</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'post:profile' %}">プロフィール</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'post:inquiry' %}">お問い合わせ</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'post:privacy' %}">プライバシーポリシー</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="m-0 text-left text-white-50 small">Copyright &copy; 2020 SASA*SITE</p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- JQuery -->
+        <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+        <!-- Bootstrap bundle -->
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <!-- Table of contents -->
+        <script src="{% static 'js/table_of_contents.js' %}"></script>
+    </body>
+</html>

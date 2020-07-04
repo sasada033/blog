@@ -1,2 +1,6 @@
+media/
 .idea/
+*.log
 *.pyc
+.env
+client_secrets.json

@@ -1,0 +1,247 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    word-wrap: break-word;
+    background-color: #f7f5f2;
+}
+
+.hljs {
+    line-height: 1.6rem;
+    padding: 1.8rem;
+}
+
+#contents {
+    flex: 1;
+}
+
+main, #inquiry, #privacy, #profile {
+    background-color: #FFF;
+    line-height: 1.8rem;
+    padding: 2rem 1.5rem 5rem 1.5rem;
+}
+
+main {
+    margin-bottom: 24.4rem;
+}
+
+#inquiry, #privacy, #profile {
+    margin-bottom: 10rem;
+}
+
+
+h1 {
+    padding: 0.5em 0;/*上下の余白*/
+    margin-bottom: 0.5em;
+    border-bottom: solid 3px rgb(33, 37, 41, 0.2);/*下線*/
+}
+
+article h2 {
+    margin: 2em 0 0.7em 0;
+    padding: 0.4em;/*文字周りの余白*/
+    color: #494949;/*文字色*/
+    background: #fffaf4;/*背景色*/
+    border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+}
+
+article h3, #privacy h3 {
+    margin: 2.2rem 0;
+    padding: 0.1em 0.3em;/*上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: transparent;/*背景透明に*/
+    border-left: solid 4px #7db4e6;/*左線*/
+}
+
+article h4, #privacy h4 {
+    font-weight: bolder;
+    margin: 1.8rem 0;
+}
+
+article img {
+    border: 1px solid #dedede;
+    margin: 2rem 0;
+    max-width: 100%;
+    height: auto;
+}
+
+#inquiry h2, #privacy h2, #profile h2 {
+    margin-bottom: 3rem;
+    padding: 0.6rem 1rem;/*文字の上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: #f4f4f4;/*背景色*/
+    border-left: solid 5px #7db4e6;/*左線*/
+    border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+#privacy p {
+    text-indent: 1em;
+    margin-bottom: 2.2em;
+}
+
+#profile h3 {
+    position: relative;
+    margin: 3rem 0 1.5rem 0;
+    padding-left: 2.5rem;
+    color:#153c6e;
+}
+
+#profile h3::before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    content: "\f121";
+    font-weight: 900;
+    background: #c9e2ff;
+    color: #153c6e;
+    font-size: 15px;
+    border-radius: 50%;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.card-body {
+    padding: 0.8rem;
+}
+
+aside {
+    margin-bottom: 1.5rem;
+}
+
+.aside-head {
+    border-bottom: double 5px #a6d3c8;
+    color: #a6d3c8;
+    margin-bottom: 1rem;
+    padding: 0.7rem 0;
+}
+
+.aside-prof {
+    background-color: #fff;
+    padding: 0.5rem;
+}
+
+.prof-top {
+    height: 10rem;
+    background-image: linear-gradient(135deg, #dfdfdf 25%, #f9f8f7 25%, #f9f8f7 50%, #dfdfdf  50%, #dfdfdf 75%, #f9f8f7 75%, #f9f8f7);
+    background-size: 90px 90px;
+}
+
+.prof-icon {
+    background-color: #a6d3c8;
+    overflow: hidden;
+    float: left;
+    width: 100px;
+    margin: -55px 0 0 20px;
+    padding: 10px 5px 0 5px;
+    border-radius: 50%;
+}
+
+.prof-bottom {
+    margin-top: 3rem;
+    padding: 0.7rem;
+}
+
+.aside-tags {
+    padding: 0;
+}
+
+.aside-tags li {
+    display: inline-block;/*inline-blockにします*/
+    margin: 5px 0;/*余白も指定できる*/
+    vertical-align: middle;/*縦の表示位置も指定できる*/
+}
+
+.major-tags li {
+    width: 100%;/*幅も指定できる*/
+}
+
+nav {
+    background: linear-gradient(135deg, #030000 25%, transparent 25%, transparent 50%, #030000 50%, #030000 75%, transparent 75%, transparent);
+    background-size: 4px 4px;
+    margin-bottom: 20px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #FFF;
+}
+
+.navbar .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+    color: #da3e44;
+}
+
+.logo, .navbar-brand {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #33383c;
+    padding: 20px 0px;
+    margin-top: 20px;
+}
+
+.sns-icons {
+    margin: 1rem 0;
+    padding: 0.3rem;
+}
+
+.sns-list {
+    margin: 1rem 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.sns-list li {
+    margin: 0 1rem;
+}
+
+.fa-github, .fa-twitter {
+    color: rgba(255,255,255,.5);
+}
+
+.menu span {
+    color: #FFF;
+    font-weight: bold;
+    border-bottom: 1px solid #c7c7c7;
+    padding: 10px 0px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.menu li a {
+    color:#FFF;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu li {
+    margin: 10px 0px;
+    list-style: none;
+}
+
+.menu li a:hover {
+    color: #da3e44;
+}
+
+@media screen and (max-width: 767px) {
+    #paging ul .page-buns {
+        display: none;
+    }
+    main {
+        margin-bottom: 10rem;
+    }
+}
