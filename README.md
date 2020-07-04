@@ -13,7 +13,7 @@ You can see this website on https://sasaseite.net.
 
 - Language
 
-    python 3.8
+    python 3.7.6
     
 - FrameWork
 

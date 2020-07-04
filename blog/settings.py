@@ -10,7 +10,7 @@ DEBUG = False
 
 STATIC_ROOT = '/usr/share/nginx/html/static'
 
-MEDIA_ROOT = '/usr/share/ngnix/html/media'
+MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 
 # Amazon SES settings
