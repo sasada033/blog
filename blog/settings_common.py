@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import environ
 from django.contrib.messages import constants as messages
+from datetime import datetime
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -174,6 +175,8 @@ MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.extra',
     'markdown.extensions.toc',
 ]
+
+MARKDOWNX_MEDIA_PATH = datetime.now().strftime('markdownx/%Y/%m')
 
 MARKDOWNX_IMAGE_MAX_SIZE = {
     'size': (1920, 1080),
