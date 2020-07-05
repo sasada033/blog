@@ -1,4 +1,4 @@
-$(function() {
+$(window).on('load', function() {
 	/* -------------------------------------------------------
 		記事の見出しから目次作成
 	--------------------------------------------------------*/
@@ -77,7 +77,7 @@ $(function() {
 		$('article [id^="chapter"]').each(function(i){
 			secTopArr[i] = $(this).offset().top;
 		});
-	
+
 		//スクロールイベント
 		$(window).on('load scroll',function(){
 			for (var i = secTopArr.length-1; i>=0; i--) {
