@@ -38,13 +38,13 @@ def get_report(analytics):
         body={
             'reportRequests': [{
                 'viewId': VIEW_ID,
-                'dateRanges': [{'startDate': '2020-7-01', 'endDate': 'today'}],
-                'metrics': [{'expression': 'ga:pageviews'}],
+                'dateRanges': [{'startDate': '2020-07-01', 'endDate': 'today'}],
+                'metrics': [{'expression': 'ga:sessions'}],
                 'dimensions': [{'name': 'ga:pagePath'}],
                 'dimensionFilterClauses': [{
                     'filters': [{'dimensionName': 'ga:pagePath', 'expressions': ['/detail/']}]
                 }],
-                'orderBys': [{'fieldName': 'ga:pageviews', 'sortOrder': 'DESCENDING'}]
+                'orderBys': [{'fieldName': 'ga:sessions', 'sortOrder': 'DESCENDING'}]
             }]
         }
     ).execute()
