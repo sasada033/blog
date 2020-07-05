@@ -8,6 +8,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """コマンド定義関数"""
+        updates = []
         for pk, page_view in get_trend_articles():
-            post = Post.objects.get(pk=pk)
-            post.update(page_view=page_view)
+            post = Post(pk=pk, page_view=page_view)
+            updates.append(post)
+        Post.objects.bulk_update(updates, fields=['page_view'])
