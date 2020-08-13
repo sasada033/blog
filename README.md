@@ -2,12 +2,12 @@
 [![Build Status](https://travis-ci.org/sasada033/Blog.svg?branch=develop)](https://travis-ci.org/sasada033/Blog)
 
 #### *Home page*
-https://sasaseite.net
+https://sasasite.net
 
 ## Description
 This is a blog application owned by sasada033.
 
-You can see this website on https://sasaseite.net.
+You can see this website on https://sasasite.net.
 
 ## Spec
 
